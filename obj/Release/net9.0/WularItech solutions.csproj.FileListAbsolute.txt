@@ -157,11 +157,6 @@ D:\mvc\WularItech solutions\obj\Release\net9.0\rjsmcshtml.dswa.cache.json
 D:\mvc\WularItech solutions\obj\Release\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\mvc\WularItech solutions\obj\Release\net9.0\scopedcss\bundle\WularItech solutions.styles.css
 D:\mvc\WularItech solutions\obj\Release\net9.0\scopedcss\projectbundle\WularItech solutions.bundle.scp.css
-D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\zpyncu4ypn-h4xdnjkyqp.gz
-D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\q8btjtq3zd-6tzqtenzql.gz
-D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\eyp33fgtfc-vec3qqi5qt.gz
-D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\ka12tohf4l-2s9uilpjmj.gz
-D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\9bodgefeff-p2a5nljoq9.gz
 D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\w0aojypj68-61n19gt1b8.gz
 D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\s56hzqvmm2-xtxxf3hu2r.gz
 D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\h8y1jeen16-bqjiyaj88i.gz
@@ -235,3 +230,9 @@ D:\mvc\WularItech solutions\obj\Release\net9.0\refint\WularItech solutions.dll
 D:\mvc\WularItech solutions\obj\Release\net9.0\WularItech solutions.pdb
 D:\mvc\WularItech solutions\obj\Release\net9.0\WularItech solutions.genruntimeconfig.cache
 D:\mvc\WularItech solutions\obj\Release\net9.0\ref\WularItech solutions.dll
+D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\b13evxnlv9-dnxctem9v6.gz
+D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\zpyncu4ypn-9ngyhddl53.gz
+D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\q8btjtq3zd-mxon02mmot.gz
+D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\eyp33fgtfc-55dsl81uuv.gz
+D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\ka12tohf4l-hzb44xme3d.gz
+D:\mvc\WularItech solutions\obj\Release\net9.0\compressed\9bodgefeff-yr3sk0payr.gz

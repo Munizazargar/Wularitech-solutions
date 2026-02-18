@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WularItech solutions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+383d2b3aa1418b5ded892258144f10d52c72e0d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66bd3fc3c7574abb246c1fdf8da4aea3da8fd932")]
 [assembly: System.Reflection.AssemblyProductAttribute("WularItech solutions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WularItech solutions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

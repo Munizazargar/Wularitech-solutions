@@ -3,16 +3,50 @@ using WularItech_solutions;
 using WularItech_solutions.Configuration;
 using WularItech_solutions.Interfaces;
 using WularItech_solutions.Services;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// ================= DATABASE CONFIG =================
 
+if (builder.Environment.IsDevelopment())
+{
+    // Local SQL Server (HP\SQLEXPRESS)
+    builder.Services.AddDbContext<SqlDbContext>(options =>
+        options.UseSqlServer(
+            builder.Configuration.GetConnectionString("DefaultConnection")));
+}
+else
+{
+    // Railway PostgreSQL (Production)
 
-builder.Services.AddDbContext<SqlDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);        //connect db with application
-builder.Services.AddScoped<ITokenService, TokenService>();    //tokenservice inject 
+    var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+    if (!string.IsNullOrEmpty(databaseUrl))
+    {
+        var uri = new Uri(databaseUrl);
+        var userInfo = uri.UserInfo.Split(':');
+
+        var connectionString =
+            $"Host={uri.Host};" +
+            $"Port={uri.Port};" +
+            $"Database={uri.AbsolutePath.TrimStart('/')};" +
+            $"Username={userInfo[0]};" +
+            $"Password={userInfo[1]};" +
+            $"SSL Mode=Require;Trust Server Certificate=true";
+
+        builder.Services.AddDbContext<SqlDbContext>(options =>
+            options.UseNpgsql(connectionString));
+    }
+    else
+    {
+        throw new Exception("DATABASE_URL is not set.");
+    }
+}
+
+// ================= OTHER SERVICES =================
+
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.Configure<CloudinarySettings>(
     builder.Configuration.GetSection("CloudinarySettings"));
@@ -20,20 +54,19 @@ builder.Services.Configure<CloudinarySettings>(
 builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
 
 builder.Services.AddControllersWithViews();
+
 var app = builder.Build();
 
+// ================= MIDDLEWARE =================
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapStaticAssets();
@@ -42,4 +75,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
+
 app.Run();
