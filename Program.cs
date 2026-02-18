@@ -76,4 +76,13 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+
+    // ================= AUTO APPLY MIGRATIONS =================
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<SqlDbContext>();
+    db.Database.Migrate();
+}
+
 app.Run();
